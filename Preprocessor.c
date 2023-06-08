@@ -1,9 +1,6 @@
 1.
-
 #include<stdio.h>
-
 #define SWAP(a, b, c)(c t; t=a, a=b, b=t)
-  
 int main()
   
 {
@@ -48,3 +45,72 @@ Step 3: printf("%d, %d, %d\n", i, j, k); It prints the variable i, j, k.
 In the above macro step 2 the variable i value is increemented by 2 and variable j value is increemented by 1.
 
 Hence the output of the program is 12, 6, 12 */
+  
+3.
+  
+#include<stdio.h>
+#define SQUARE(x) x*x
+
+int main()
+{
+    float s=10, u=30, t=2, a;
+    a = 2*(s-u*t)/SQUARE(t);
+    printf("Result = %f", a);
+    return 0;
+}
+
+Ans : -100.000000
+  
+/*Associative operations perform yourself */
+  
+4.
+  
+#include<stdio.h>
+#define SQR(x)(x*x)
+
+int main()
+{
+    int a, b=3;
+    a = SQR(b+2);
+    printf("%d\n", a);
+    return 0;
+}
+
+Ans : 11
+/* The macro function SQR(x)(x*x) calculate the square of the given number 'x'. (Eg: 102)
+
+Step 1: int a, b=3; Here the variable a, b are declared as an integer type and the variable b is initialized to 3.
+
+Step 2: a = SQR(b+2); becomes,
+
+=> a = b+2 * b+2; Here SQR(x) is replaced by macro to x*x .
+
+=> a = 3+2 * 3+2;
+
+=> a = 3 + 6 + 2;
+
+=> a = 11;
+
+Step 3: printf("%d\n", a); It prints the value of variable 'a'.
+
+Hence the output of the program is 11 */
+  
+5.
+  
+#include<stdio.h>
+#define FUN(i, j) i##j
+
+int main()
+{
+    int va1=10;
+    int va12=20;
+    printf("%d\n", FUN(va1, 2));
+    return 0;
+}
+
+Ans : 20
+  
+/* ## combines  the given variable names */
+  
+6.
+  
