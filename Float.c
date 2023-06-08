@@ -69,3 +69,25 @@ Ans : 4,8,12
 sizeof(3.14) here '3.14' specifies the double data type. Hence size of float is 8 bytes.
 
 sizeof(3.14l) here '3.14l' specifies the long double data type. Hence size of float is 10 bytes.*/
+  
+5.
+#include<stdio.h>
+
+  int main()
+{
+    float f=43.20;
+    printf("%e, ", f);
+    printf("%f, ", f);
+    printf("%g", f);
+    return 0;
+}
+
+Ans : 4.320000e+01, 43.200001, 43.2
+
+/*Explanation:
+
+printf("%e, ", f); Here '%e' specifies the "Scientific Notation" format. So, it prints the 43.20 as 4.320000e+01.
+
+printf("%f, ", f); Here '%f' specifies the "Decimal Floating Point" format. So, it prints the 43.20 as 43.200001.
+
+printf("%g, ", f); Here '%g' "Use the shorter of %e or %f". So, it prints the 43.20 as 43.2.*/
