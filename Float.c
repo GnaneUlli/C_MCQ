@@ -52,3 +52,20 @@ int main()
 Ans : 6.000000
 
 4.
+#include<stdio.h>
+  
+#include<math.h>
+  
+int main()
+{
+    printf("%d, %d, %d\n", sizeof(3.14f), sizeof(3.14), sizeof(3.14l));
+    return 0;
+}
+
+Ans : 4,8,12
+
+/*sizeof(3.14f) here '3.14f' specifies the float data type. Hence size of float is 4 bytes.
+
+sizeof(3.14) here '3.14' specifies the double data type. Hence size of float is 8 bytes.
+
+sizeof(3.14l) here '3.14l' specifies the long double data type. Hence size of float is 10 bytes.*/
