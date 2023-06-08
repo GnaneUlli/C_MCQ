@@ -112,5 +112,17 @@ Ans : 20
   
 /* ## combines  the given variable names */
   
-6.
+6.#include<stdio.h>
+#define str(x) #x
+#define Xstr(x) str(x)
+#define oper multiply
+
+int main()
+{
+    char *opername = Xstr(oper);
+    printf("%s\n", opername);
+    return 0;
+}
+
+Ans : print 'multiply'
   
