@@ -112,7 +112,8 @@ Ans : 20
   
 /* ## combines  the given variable names */
   
-6.#include<stdio.h>
+6.
+#include<stdio.h>
 #define str(x) #x
 #define Xstr(x) str(x)
 #define oper multiply
@@ -126,3 +127,24 @@ int main()
 
 Ans : print 'multiply'
   
+7.
+
+Preprocessor directive #undef can be used only on a macro that has been #define earlier
+
+Ans : True
+
+8.
+
+Every C program will contain at least one preprocessor directive.
+
+Ans : False
+
+9.
+The preprocessor can trap simple errors like missing declarations, nested comments or mismatch of braces.
+
+Ans : False
+
+10.
+Once preprocessing is over and the program is sent for the compilation the macros are removed from the expanded source code.
+  
+Ans : True
