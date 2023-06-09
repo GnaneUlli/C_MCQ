@@ -61,3 +61,22 @@ return b;
 }
 */
 
+3.
+#include<stdio.h>
+int main()
+{
+int b = 65;
+void *p = &b;
+int *j = (int*)p;
+char *ch = (char*)p;
+printf("%d, %c\n", *j, *ch);
+return 0;
+}
+
+Ans :  65, A
+/*Explanation: The void pointer is a generic pointer type. It can hold
+addresses of all data types. It is used when the actual data type of a pointer
+is not known for the time, and later it may be known. In the given code we
+are using a void pointer that is holding addresses of an integer and
+character type.*/
+
