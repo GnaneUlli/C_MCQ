@@ -129,5 +129,74 @@ still points to a memory location/address, as p is just a pointer variable,
 this ‘p’ is called dangling pointer.
 The dangling pointer in the program can be avoided by making p = NULL
 just after the free(p) statement*/
+6.
+What is the output of the following program? Assumption: address of p
+is 1000 and q is 2000.?
+#include<stdio.h>
+#include<stdlib.h>
+void *fun(int **q)
+{
+int r = 20;
+**q=r;
+printf("%u ", *q);
+}
+int main()
+{
+int *p = (int *)malloc(sizeof(int));
+*p = 55;
+fun(&p);
+printf("%d %u\n", *p, p);
+return 0;
+}
+
+Ans :  1000 20 1000
+  
+/*: The memory to ‘p’ gets allocated using malloc() in main(),
+the memory is accessible to other functions also, here in fun(), we are
+modifying the shared memory value pointed by pointer ‘p’, which get
+updated with value 20. */
+  
+7.
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+char *p = "hello";
+char q[] = "hello";
+printf("%d %d %d ", sizeof(*p), sizeof(p), sizeof(q));
+printf("%d %d", strlen(p), strlen(q));
+return 0;
+}
+
+Ans : 1 4 6 5 5
+/*Explanation: The sizeof() operator returns the number of bytes consumed
+by its operand. Here, ‘p’ is a character
+pointer, which needs only 1 byte for storing the value. Hence, sizeof(*p)
+returns value 1.
+Since ‘p’ is a pointer whose size depends on the number of address lines
+in a machine, as we discussed in the introduction, the size of the pointer
+variable is 4 bytes. Hence sizeof(p) returns 4. The sizeof(q) returns 6, 5
+characters and one termination (null) character (‘\0’). Each string gets
+suffixed with a termination character (‘\0’).
+The strlen() in a library function, present in the string.h header file counts
+the number of characters in a given string and it doesn’t count the ‘\0’ (null
+character).*/
+  
+8.
+Which of the following given statements are true?
+(i) (void*)0 is void pointer
+(ii) (void*)0 is NULL pointer
+(iii) int *p = (int *)0; p is null pointer
+(iv) a[i] == i[a]
+(v) a[i][j] == *(*(a+i)+j);
+
+
+Ans :  ii, iii, iv, v
+
+/*"(void*)0" is not a void pointer, void pointer is "void *p;".
+For (ii), (iii), (iv), (v) explanation not required.*/
+
+
+
 
 
