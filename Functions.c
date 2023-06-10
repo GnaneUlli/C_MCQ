@@ -157,4 +157,91 @@ Ans : Compile error
 
 /* We cannot use return in ternary operators */
 
+7.
+#include<stdio.h>
+
+int main()
+{
+    int i=1;
+    if(!i)
+        printf("IndiaBIX,");
+    else
+    {
+        i=0;
+        printf("C-Program");
+        main();
+    }
+    return 0;
+}
+
+Ans : prints C-program infinetly
+
+8.
+#include<stdio.h>
+int i;
+int fun1(int);
+int fun2(int);
+
+int main()
+{
+    extern int j;
+    int i=3;
+    fun1(i);
+    printf("%d,", i);
+    fun2(i);
+    printf("%d", i);
+    return 0;
+}
+int fun1(int j)
+{
+    printf("%d,", ++j);
+    return 0;
+}
+int fun2(int i)
+{
+    printf("%d,", ++i);
+    return 0;
+}
+int j=1;
+
+Ans : 4,3,4,3
+    
+/*Step 1: int i; The variable i is declared as an global and integer type.
+
+Step 2: int fun1(int); This prototype tells the compiler that the fun1() accepts the one integer parameter and returns the integer value.
+
+Step 3: int fun2(int); This prototype tells the compiler that the fun2() accepts the one integer parameter and returns the integer value.
+
+Step 4: extern int j; Inside the main function, the extern variable j is declared and defined in another source file.
+
+Step 5: int i=3; The local variable i is defines as an integer type and initialized to 3.
+
+Step 6: fun1(i); The fun1(i) increements the given value of variable i prints it. Here fun1(i) becomes fun1(3) hence it prints '4' then the control is given back to the main function.
+
+Step 7: printf("%d,", i); It prints the value of local variable i. So, it prints '3'.
+
+Step 8: fun2(i); The fun2(i) increements the given value of variable i prints it. Here fun2(i) becomes fun2(3) hence it prints '4' then the control is given back to the main function.
+
+Step 9: printf("%d,", i); It prints the value of local variable i. So, it prints '3'.
+
+Hence the output is "4 3 4 3".*/
+    
+9.
+#include<stdio.h>
+int fun(int);
+int main()
+{
+    float k=3;
+    fun(k=fun(fun(k)));
+    printf("%f\n", k);
+    return 0;
+}
+int fun(int i)
+{
+    i++;
+    return i;
+}
+Ans : 5.000000
+    
+
 
