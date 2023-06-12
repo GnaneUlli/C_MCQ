@@ -243,5 +243,56 @@ int fun(int i)
 }
 Ans : 5.000000
     
+10.
+#include<stdio.h>
+
+int main()
+{
+    printf("%p\n", main());
+    return 0;
+}
+
+Ans : Runs infinitely without printing anything
+/*In printf("%p\n", main()); it calls the main() function and then it repeats infinetly, untill stack overflow.*/
+
+11.
+
+A function cannot be defined inside another function
+Ans : True
+
+12.
+Functions cannot return a floating point number
+
+Ans : False
+
+//It can
+
+13.
+
+Every function must return a value
+Ans : False
+
+// Void has no return type
+
+14.
+
+If a function contains two return statements successively, the compiler will generate warnings.
+Ans : True
+
+15.
+Maximum number of arguments that a function can take is 12
+Ans : False
+//No, C can accept upto 127 maximum number of arguments in a function.
+
+16.
+Recursion takes more time than loops
+
+Ans : True
+
+/*When a recursion is invoved it has to call the whole function again and again but in loops it has to only iterate through 
+the line so recursion takes more memory and time */
+
+
+
 
 
