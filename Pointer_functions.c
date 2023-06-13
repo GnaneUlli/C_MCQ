@@ -195,6 +195,42 @@ Ans :  ii, iii, iv, v
 /*"(void*)0" is not a void pointer, void pointer is "void *p;".
 For (ii), (iii), (iv), (v) explanation not required.*/
 
+9.
+#include<stdio.h>
+void fun(int x, int *y, int *z)
+{
+*y += 4;
+printf("%d\n",*y);
+printf("%d\n",*z);
+*z = *z + x + *y;
+}
+int main()
+{
+int x=10, y=3;
+fun(y, &x, &x);
+printf("%d, %d\n", x, y);
+return 0;
+}
+
+Ans : 31
+/*When ever y value is updated z also gets the same value.
+
+10.
+#include<stdio.h>
+void test(int* , int*);
+int main()
+{
+int a=5;
+test(&a, &a);
+printf("%d ", a);
+return 0;
+}
+void test(int *c, int *d)
+{
+*c += *d * 2;
+*d *= *c - 3;
+}
+Ans : 180
 
 
 
