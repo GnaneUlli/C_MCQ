@@ -213,7 +213,7 @@ return 0;
 }
 
 Ans : 31
-/*When ever y value is updated z also gets the same value.
+//When ever y value is updated z also gets the same value.
 
 10.
 #include<stdio.h>
