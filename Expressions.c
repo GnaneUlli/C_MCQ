@@ -78,3 +78,23 @@ Ans : True
 In the expression a=b=5 the order of Assignment is NOT decided by Associativity of operators
 
 Ans : False
+
+6.
+#include<stdio.h>
+int main()
+{
+if(sizeof(int) > -5) //line 1
+printf("True\n");
+else
+printf("False");
+return 0;
+}
+
+Ans : False
+/*In C, sizeof() operator returns unsigned integer value. At line
+1, the unsigned integer and default integer (signed) value is getting
+compared. The relational operators only allow comparison between the
+same data type on both the left and right-hand sides. So, the standard C
+compiler promotes the signed integer to an unsigned integer. The value of
+-5 in an unsigned integer is a very large positive number. This makes the if
+condition false, else part will execute, and ‘False’ will get printed.*/    
