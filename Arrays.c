@@ -99,3 +99,13 @@ int main()
 }
 
 Ans : 1200, 1200, 1200
+
+6.
+#include<stdio.h>
+int main()
+{
+int a[][3] = {4, 5, 6, 7, 8, 9, 1, 2, 3};
+printf("%u, %u, %u", *a[2], a[2][0], **(a+1+(‘b’-’a’)));
+return 0;
+}
+Ans :  1 1 1
