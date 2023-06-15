@@ -98,3 +98,124 @@ same data type on both the left and right-hand sides. So, the standard C
 compiler promotes the signed integer to an unsigned integer. The value of
 -5 in an unsigned integer is a very large positive number. This makes the if
 condition false, else part will execute, and ‘False’ will get printed.*/    
+    
+7.
+    
+#include<stdio.h>
+int main()
+{
+int i = 3;
+int j = i+(i=10); //line 2
+printf("%d\n", j);
+return 0;
+}
+
+Ans : 20
+    
+/*At line 2 in a given program, parenthesis has higher
+precedence than the ‘+’ operator, it first evaluates parenthesis and then
+‘+’. If we remove the parenthesis it throws an l-value required error.
+"Lvalue required" means that it is not possible to assign a value to
+something that has no place in memory. A variable on the left-hand side is
+needed to assign a value. Few l-value error occurring operations are 3 = a;
+2 = 2;*/
+
+8.
+
+#include<stdio.h>
+int main()
+{
+int i = 1;
+int j = 2;
+if(i & j == 1)
+{
+printf("true");
+}
+else
+printf("false");
+return 0;
+}
+Ans: false
+    
+/*Precedence of the relational operator ‘==’ is higher than
+logical operator ‘&’. Hence, ‘false’ will get printed.*/
+
+9.
+#include<stdio.h>
+int main()
+{
+int i=3, j=2;
+int k = i << 1 > 5;// line 2
+printf("%d\n", k);
+return 0;
+}
+Ans : 1
+/*‘<<’ is left shift operator, and its precedence is higher than
+relational operator ‘>’.
+k = i << 1 > 5 ; → k = ( 3 << 1 ) >5 ; → k = (0000 0011 << 1) > 5 ; → k =
+(0000 0110) > 5 ; → k = 6 > 5 ; → k=1;*/
+
+10.
+    
+#include<stdio.h>
+int main()
+{
+int i=2, j=2;
+int k = i^j&1;//line 2
+printf("%d", k);
+return 0;
+}
+
+Ans : 2  
+    
+/*The ‘^’ (XOR) and ‘&’ (Logical And) operators have the
+same precedence, associativity will be checked. The logical operators are
+R-L associative. The expression at line 2 can be written as:
+k = i^(j&1) ;
+k = 0000 0010 ^ (0000 0010 & 0000 0001);
+k = 0000 0010 ^ (0000 0000) ;
+k = 0000 0010 ;
+k = 2 ;*/
+
+11.
+! has higher precedence than && and == so ! it will execute last
+
+12.
+#include<stdio.h>
+int main()
+{
+int a[3] = {5, 6, 7};
+char *c = (char *)a;
+printf("%d, %d, %d, %d ", *c, c[0], c[1], c[2]);
+return 0;
+}
+
+Ans :  5, 5, 0, 0
+
+
+/*int a[3]={5,6,7};
+05 00 00 00 06 00 00 00 07 00 00 00
+1000 1001 1002 1003 1004 1005 1006 1007 1008 1009 1010 1011
+Hence, c[0] = 5; c[1] = 0; c[2] = 0; c[8] = 7;*/
+
+13.
+#include<stdio.h>
+#define FOO(x) foo(#x) //line 2
+int foo(char *x)
+{
+printf("%c %c", *x,x[1]); //line 4
+}
+int main()
+{
+FOO(65); //line 8
+return 0;
+}
+
+Ans : 6 5
+/*the execution of a given program is done in two steps: (i)
+The macro FOO(x) will get substituted as foo(#x), where ‘#’ converts ‘x’
+to string. The number 65 will be converted into the string "65". (ii) The
+function call will take place as foo("65"). In function foo(), string "65" is
+pointed by character pointer ‘x’. Hence, x[0] will give ‘6’ and x[1] will give 5*/
+
+
