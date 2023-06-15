@@ -109,3 +109,21 @@ printf("%u, %u, %u", *a[2], a[2][0], **(a+1+(‘b’-’a’)));
 return 0;
 }
 Ans :  1 1 1
+
+7.
+#include<stdio.h>
+
+int main()
+{
+    int size, i;
+    scanf("%d", &size);
+    int arr[size];
+    for(i=1; i<=size; i++)
+    {
+        scanf("%d", arr[i]);
+        printf("%d", arr[i]);
+    }
+    return 0;
+}
+
+Ans : The code is erroneous since the statement declaring array is invalid.
