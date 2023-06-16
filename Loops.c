@@ -126,3 +126,35 @@ int main(){
     
 }
 but this will print both conditions since a block is used , so using a block  is a standard rule of c written in micheal barr */
+
+7.
+#include<stdio.h>
+int main()
+{
+int x=0, y=0;
+while(x < 4, y < 7)
+{
+x++;
+y++;
+}
+printf("%d, %d\n", x, y);
+return 0;
+}
+Ans :  7, 7
+
+8.
+#include<stdio.h>
+void fun()
+{
+label1: printf("3");
+}
+int main()
+{
+printf("1 ");
+goto label1;
+printf("2");
+return 0;
+}
+Ans : error compile time 
+//you can access goto with in same function.
+
