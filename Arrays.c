@@ -127,3 +127,42 @@ int main()
 }
 
 Ans : The code is erroneous since the statement declaring array is invalid.
+
+8.
+#include<stdio.h>
+int main()
+{
+int a[3][3] = {4, 5, 6, 7, 8, 9, 1, 2, 3};
+int *p = &a[2];
+int *q = a[2];
+printf("%d %d", *p, *q);
+return 0;
+}
+Ans : 1, 1
+/*We can directly access the address using the ‘*’ operator without skipping
+any column or row in the 2D array-like *1024 return 1.
+p = 1024 q = 1024
+p = & a[2] = 1024
+q = a [2] = 1024
+printf("%d %d, *1024 , *1024) ;
+Output 1 1
+We can directly access the address using the '*' operator without skipping
+any column or row in the 2D array-like *1024 return 1.*/
+9.
+#include<stdio.h>
+int main()
+{
+int a[3][3] = {5, 6, 7, 8, 9, 10, 1, 2,3};
+int *p = &a[2];
+int *q = a[2];
+printf("%d %d", p[1], q[2]);
+return 0;
+}
+/*p = 1024 q = 1024
+p = &a[2] = 1024
+q = a[2] = 1024;
+p[1] = *(p+1) = *1028; → 2
+q[2] = *(q+2) = *1032; → 3
+//’p’ and ‘q’ are integer pointer, there step size is 4B, they are independent
+of an array.*/
+
