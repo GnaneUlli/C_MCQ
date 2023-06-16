@@ -102,4 +102,27 @@ It should be like:
 
 b = a >= 5 ? 100 : 200;*/
 
-
+6. #include<stdio.h>
+int main(){
+    int a=1;
+    if(a)
+        printf("hs");
+        printf("jk");
+    else
+        printf("sd");
+    
+}
+// It prints error because two printfs cannot be used in single if without else
+/*#include<stdio.h>
+int main(){
+    int a=1;
+    if(a){
+        printf("hs");
+        printf("jk");
+    }
+    else{
+        printf("sd");
+    }
+    
+}
+but this will print both conditions since a block is used , so using a block  is a standard rule of c written in micheal barr */
