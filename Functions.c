@@ -291,6 +291,22 @@ Ans : True
 
 /*When a recursion is invoved it has to call the whole function again and again but in loops it has to only iterate through 
 the line so recursion takes more memory and time */
+17.
+#include<stdio.h>
+void fun(static int a, auto int b, register int c)
+{
+if(a>2)
+{
+printf("%d %d %d", a--, b, ++c);
+fun(a, b, c);
+}
+}
+int main()
+{
+fun(5, 6, 7);
+return 0;
+}
+// Ecxept register remaining storage classes cannot be used as functional arguments.
 
 
 
