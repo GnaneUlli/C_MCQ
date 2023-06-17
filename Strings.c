@@ -94,3 +94,52 @@ return 0;
 }
 Ans :  13 8
 //Read string notes
+
+7.
+#include<stdio.h>
+int main()
+{
+char *str1 = "%d %d %d\n";
+char str2[] = "%d %d %d\n";
+printf(str1, sizeof(str1), strlen(str1), sizeof(str2));
+return 0;
+}
+Ans :  4 9 10
+// Beacause str1 is a pointer so its size will be 4.
+
+8.
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+char *str = "India";
+char a[10];
+int i;
+int len = strlen(str);
+for(i=len; i>=0; i--)
+a[i] = str[len-i];
+printf("%s", a);
+return 0;
+}
+Ans : Nothing will get printed
+/*The strlen() will return 5, we are doing a[0] = str[5]; in for
+loop’s first iteration. So, at the first index of an array ‘a’ there is a null
+character. Hence, nothing will get printed.*/
+
+9.
+#include<stdio.h>
+int main()
+{
+int x=5;
+int *p = &x;
+printf("%d", x**p+((p+2)-(p+1))**p);
+return 0;
+}
+Ans : 30
+/*The unary operators have higher precedence than the binary
+operators. Given
+expression can be written as: → x**p+((p+2)-(p+1))**p) ; //given x=5; p
+= &x;
+→ x*(*p)+((p+2-p+1))*(*p);
+→ 5*5 + (1)*5; → 30.*/
+
