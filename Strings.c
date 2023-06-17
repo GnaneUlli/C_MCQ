@@ -52,3 +52,45 @@ In a given program, ‘s’ is a character pointer that is pointing
 to an empty string, s contains the address of the empty string. In the while
 statement, the condition is applied on ‘s’ which contains the address that is
 always non-zero. The loop will execute infinite time.
+
+4.
+#include<stdio.h>
+int main()
+{
+char *str[] = {"hello", "India", "love", "great"};
+char **ptr[] = {str, str+2, str+1, str+3};
+char ***p;
+p = &ptr;
+p += 2;
+printf("%s %s", *ptr[1], **p);
+return 0;
+}
+Ans : love India
+//Stick to the basics
+
+5.
+#include<stdio.h>
+int main()
+{
+char *str[] = {"hello", "India", "love", "great"};
+char **ptr[] = {str, str+2, str+1, str+3};
+char ***p;
+p = ptr;
+p += 3;
+printf("%s %s", (**p)+2, *ptr[1]+’b’-’a’ );
+return 0;
+}
+Ans :  eat ove
+//5+str will terminate the first five characters or str+5 
+
+6.
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+char str1[] = "Hello In\0dia";
+printf("%u %u", sizeof(str1), strlen(str1));
+return 0;
+}
+Ans :  13 8
+//Read string notes
