@@ -143,3 +143,33 @@ expression can be written as: → x**p+((p+2)-(p+1))**p) ; //given x=5; p
 → x*(*p)+((p+2-p+1))*(*p);
 → 5*5 + (1)*5; → 30.*/
 
+10.
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+printf("%u, %u, %d, %u", sizeof(NULL), sizeof(""),
+strlen(""), sizeof(‘\0’));
+return 0;
+
+Ans : 4,1,0,4
+
+11.
+#include<stdio.h>
+int i;
+int main()
+{
+char *str1 = "Hello";
+char str2[] = "India is great";
+while(*str1){
+str2[i] = *str1++;
+i++;
+}
+printf("%s", str2);
+return 0;
+}
+Ans : "Hello is great"
+
+12.
+
+
