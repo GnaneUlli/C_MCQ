@@ -232,6 +232,55 @@ void test(int *c, int *d)
 }
 Ans : 180
 
+11.
+#include<stdio.h>
+int x;
+int main()
+{
+int * y = &5;
+int *const ptr = &x;
+ptr++;
+(*ptr)++;
+printf("%p %d", ptr, *y);
+}
+
+Ans : Error compile time
+/*(*ptr)++; this is an invalid opreation and int * y =&5 also invalid.*/
+
+12.
+#include<stdio.h>
+int main()
+{
+int i=10;
+fun((&i)++);
+return 0;
+}
+void fun(int *p)
+{
+printf("%d", *p);
+}
+
+Ans : error compile time
+//l value required at fun((&i)++)
+
+13.
+#include<stdio.h>
+void fun(int *p)
+{
+int j=4;
+p = &j;
+printf("%d ", *p);
+}
+int main()
+{
+int i = 50;
+fun(&i);
+printf("%d", i);
+return 0;
+}
+
+Ans : 4,50
+
 
 
 
