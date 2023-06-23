@@ -171,5 +171,64 @@ return 0;
 Ans : "Hello is great"
 
 12.
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+char str[] = "India";
+char s[5];
+int i=0, len = strlen(str);
+while(len > 0)
+{
+s[i++] = str[--len];
+}
+s[i] = ‘\0’;
+printf("%s ", s);
+return 0;
+}
+
+Ans : aidnI
+/*Since its length is 5 it will loop from last element 'a' so if length is 6 then answer will be blank space.*/
+
+13.
+#include<stdio.h>
+int main()
+{
+char str1[] = "India";
+char str2[] = "Bharat";
+char *s1 =str1;
+char *s2 =str2;
+while(*s1)
+{
+*s2++ = *s1++;
+}
+printf("%s %s", str1, str2);
+return 0;
+}
+Ans : India Indiat
+
+14.
+#include<stdio.h>
+int main()
+{
+char a[]={'a','s','c','\n','i','\0'};
+char *b,*q1;
+b=a+3; //line 3
+q1=a;
+printf("%c",++*b + *q1++-30);
+return 0;
+}
+
+Ans : N
+/*: The integer pointer ‘b’ is pointing third element of an array
+a[3] and ‘q1’ is pointing to first element of an array ‘a’, the first element is
+‘a’ whose ascii value is 97. The expression in printf() will be evaluated
+as:
+++(*b) + (*(q1++)-30) → ++10 + ((97)++ - 30) → 11 + (97 - 30) → 11
++ 67 → 78; Because of ‘%c’ format specifier, the output will be ascii
+value of 78 is ‘N’.*/
+
+15.
+
 
 
