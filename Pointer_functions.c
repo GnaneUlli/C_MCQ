@@ -281,6 +281,53 @@ return 0;
 
 Ans : 4,50
 
+14.
+#include<stdio.h>
+int main()
+{
+int a = 7;
+int *b = &a;
+int **c = &a;
+printf("%d, %u, %u", a, *b, *c);
+return 0;
+}
+
+Ans : 7,7,7
+
+15.
+#include<stdio.h>
+int main()
+{
+int x=4, y=6, z=7;
+int *p1 = &x, *p2 = &y, *p3 = &z;
+int **ptr = &p2;
+p2 = p1;
+p3 = p2;
+return 0;
+}
+
+Ans : ptr points to adress of x.
+
+16.
+#include<stdio.h>
+int main()
+{
+int a[5] = {50, 60, 70, 80, 90};
+int *p = a;
+int *q = &a[2];
+p++;
+int **ptr = p+1;
+++*ptr;
+printf("%d %d %d", p[2], *q, ptr[0]);
+return 0;
+}
+Ans : 80,74,74
+/*► p[2] → *(p+2) →*(1004+2);//step size of p is 4 →*1012 → 80 will
+get printed.
+► *q →*1008 →74 will get printed.
+►ptr[0] →*(ptr+0) →*1008 →74 will get printed*/
+
+17.
 
 
 
