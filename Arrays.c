@@ -1,4 +1,5 @@
 1.
+    
 #include<stdio.h>
 int main()
 {
@@ -15,8 +16,8 @@ Ans : 3,2,15
 //you do it
 
 2.
+    
 #include<stdio.h>
-
 int main()
 {
     static int a[2][2] = {1, 2, 3, 4};
