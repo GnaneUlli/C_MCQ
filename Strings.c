@@ -229,6 +229,45 @@ as:
 value of 78 is ‘N’.*/
 
 15.
+#include<stdio.h>
+void change(char (*ptr)[6])
+{
+(*ptr)[2] = ‘x’; // line 1
+(*ptr+1)[2] = ‘x’; // line 2
+ptr++; // line 3
+(*ptr)[2] = ‘x’; // line 4
+(*ptr+1)[2] = ‘x’; // line5
+}
+int main()
+{
+char str[][6] = {"hello", "India"};
+change(str);
+printf("%s %s", str[0], str[1]);
+return 0;
+}
 
+Ans : hexxo inxxa
+// Based on two - dimensional array indexing figure it out like you already did.
+
+16.
+#include<stdio.h>
+#include<string.h>
+void foo(char *);
+int main()
+{
+char a[100] = {0};
+printf("%u %u",sizeof(a),strlen(a));
+return 0;
+}
+
+Ans : 100,0
+  
+/*In the given program, character array ‘a’ is initialized with
+{0}. In C, if we initialize some starting elements of an array then all
+remaining elements get initialized with 0 (by default). The sizeof operator
+returns 100, the amount of memory taken by array ‘a’. The strlen() library
+function returns 0 because the first element of an array ‘a’ is 0. Since 0 is
+the ASCII value of ‘\0’ (null character) and strlen() does not consider
+null character. Hence, strlen() will not count and return 0.*/
 
 
