@@ -149,6 +149,7 @@ printf("%d %d, *1024 , *1024) ;
 Output 1 1
 We can directly access the address using the '*' operator without skipping
 any column or row in the 2D array-like *1024 return 1.*/
+    
 9.
 #include<stdio.h>
 int main()
@@ -166,4 +167,35 @@ p[1] = *(p+1) = *1028; → 2
 q[2] = *(q+2) = *1032; → 3
 //’p’ and ‘q’ are integer pointer, there step size is 4B, they are independent
 of an array.*/
+
+10.
+#include<stdio.h>
+int main()
+{
+int a[] = {10, 20, 30, 40, 50};
+int*p[] = {a, a+1, a+2, a+3, a+4};
+int **ptr = p;
+ptr++;
+printf("%d %d %d\n", ptr-p, *ptr-a, **ptr);
+*(++ptr);
+printf("%d %d %d\n", ptr-p, *ptr-a, **ptr);
+++(*ptr);
+printf("%d %d %d\n", ptr-p, *ptr-a, **ptr);
+*ptr++;
+printf("%d %d %d\n", ptr-p, *ptr-a, **ptr);
+return 0;
+}
+
+Ans : 1 1 20; 2 2 30 ; 2 3 40 ; 3 3 40
+
+11.
+#include<stdio.h>
+int main()
+{
+char p[] = "Conceptual C questions";//line 1
+printf("%s", p+p[4]-p[3]);
+return 0;
+}
+
+//both 10 and 11 figure it out.
 
