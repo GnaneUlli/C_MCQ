@@ -51,77 +51,64 @@ c;") at line 8 of a given program.*/
 #include<stdio.h>
 int main()
 {
-char q[] = "Hello India",*ptr;
-ptr=q;
-while(*ptr!=’\0’)
+struct a
 {
-++*ptr++; // line 4
-}
-printf("%s %s",ptr,q);
+char ch[7];
+char *str;
+};
+struct b
+{
+char *c;
+struct a ssl;
+};
+struct b s2 = {"Raipur", "Kanpur", "Jaipur"};
+printf("%s %s ", s2.c, s2.ssl.str);
+printf("%s %s ", ++s2.c, ++s2.ssl.str);
 return 0;
 }
 
-Ans : ifmmp!Joejb
-/*: We already discussed these kinds of questions, the
-expression ++*ptr++ at line 4 gets expanded as ++*ptr; and ptr++; After
-the execution of the while loop, each character of a given string will get
-incremented by 1. The character ‘H’ becomes ‘I’, ‘e’ becomes ‘f’, blank
-space gets converted into ‘!’ and so on as per the ASCII convention*/
+Ans : Raipur,Jaipur,aipur,aipur
 
 4.
 #include<stdio.h>
 int main()
 {
-char str[4][20]={"hello", "India", "love", "great"};
+struct s1
+{
+char *z;
 int i;
-char *temp;
-temp=str[2];
-str[2]=str[3];
-str[3]=temp;
-for (i=0;i<4;i++)
-printf("%s",str[i]);
+struct s1 *p;
+};
+struct s1 a[] = {{"Nagpur", 1, a+1}, {"Raipur", 2, a+2},
+{"Kanpur", 3, a}};
+struct s1 *ptr = a;
+printf("%s %s %s %s", a[0].z, (*ptr).z, ptr->z, a[2].p-
+>z);
 return 0;
 }
 
-Ans : Error compile time.
-/*: We discussed a similar concept in the explanation of
-question 57, group 2. 2D array is a collection of 1D arrays, Each string get
-stored in the form of a 1D array. The base address of each 1D array cannot
-be modified. If we declare given 2D array as *str[4], → char *str[4]=
-{"hello", "India", "love", "great"};, the program will give output "hello
-India great love"*/
+Ans : Nagpur,Nagpur,Nagpur,Nagpur
 
 5.
 #include<stdio.h>
-int main( )
-{
-int x[2][3][2] = {{{2,4},{7,8},{3,4}},{{2,2},{2,3},
-{3,4}}};
-printf("%u %u %u %d ",x,*x,**x,***x);
-printf("%u %u %u %d \n",x+1,*x+1,**x+1,***x+1);
-return 0;
-}
-
-Ans : 1000 1000 1000 2 1024 1008 1004 3
-
-6.
-#include<stdio.h>
-#include<string.h>
 int main()
 {
-int i, len;
-char x[] = "India";
-len = strlen(x);
-*x = x[len];
-char *ptr = x;
-for(i=0; i<len; ++i)
+struct s1
 {
-printf("%s ",ptr);
-ptr++;
-}
+char *z;
+int i;
+struct s1 *p;
+};
+struct s1 a[] = {{"Nagpur", 1, a+1}, {"Raipur", 2, a+2},
+{"Kanpur", 3, a}};
+struct s1 *ptr = a;
+printf("%s ", ++(ptr->z));
+printf("%s ", a[(++ptr)->i].z);
+printf("%s ", a[--(ptr->p->i)].z);
+printf("%d ",--a[2].i);
 return 0;
 }
 
-Ans : blank spcae, ndia, dia,ia,a.
+Ans  :  agpur Kanpur Kanpur 1
   
 
