@@ -1,4 +1,5 @@
 1.
+  
 #include<stdio.h>
 #include<string.h>
 #define strcpy(x , y) x = y
