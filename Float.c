@@ -30,8 +30,8 @@ int main()
 Output:0.7000000000 0.6999999881
   
 2.
+  
 #include<stdio.h>
-
 int main()
 {
     float *p;
