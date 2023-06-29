@@ -218,4 +218,85 @@ to string. The number 65 will be converted into the string "65". (ii) The
 function call will take place as foo("65"). In function foo(), string "65" is
 pointed by character pointer ‘x’. Hence, x[0] will give ‘6’ and x[1] will give 5*/
 
+14.
+#include<stdio.h>
+int main()
+{
+int a = 10 , b = 20;
+b = printf("%d ",sizeof(sizeof(a *= a+b))); //line 2
+printf("%d %d ", a, b);
+return 0;
+}
+
+Ans : 4 10 2
+/*: At line 2, the inner sizeof() operator has not evaluated
+because it is an operand of the outer sizeof() operator. The value returned
+by sizeof() operator is of type unsigned int. The outer sizeof() operator
+evaluates the size of unsigned int that was returned by the inside sizeof()
+which is 4. We already discussed that sizeof() does not evaluate any
+expression, hence the value of ‘a’ remains 10 and ‘b’ gets updated by the
+printf() function and its value becomes 2 because printf() is printing only
+one character*/
+
+15.
+#include<stdio.h>
+int main()
+{
+int b = 20;
+int c = sizeof(scanf("%d",&b));
+printf("%d %d",b,c);
+return 0;
+}
+
+Ans : 20,4
+    
+/*The return type of scanf() library function is int. At line 2,
+the sizeof() operator returns the size of the int data type, that is 4. The
+variable ‘c’ gets assigned the value 4.*/
+
+16.
+#include<stdio.h>
+int main()
+{
+int a = 10;
+a = 5 , 100;
+printf("%d",a);
+return 0;
+}
+
+Ans : 5
+
+17.
+#include<stdio.h>
+int main()
+{
+int a = 0 , b = 20 , 10; //line 1
+b = (110 , 120);
+printf("%d",b);
+return 0;
+}
+
+Ans : Error compile time
+
+//In line 1, we are trying to define a variable whose name is
+//10. In C, the variable names cannot start with numbers and special
+//symbols except ‘_’.
+
+18.
+#include<stdio.h>
+#define cal(a,b) a = b++
+int main()
+{
+int a = 1 , b = 5;
+cal(a , 2); // line 2
+printf("%d",a);
+printf("%d",b);
+return 0;
+}
+
+Ans : Error compile time
+/*The line 2, after macro substitution is: a = 2++ , this
+expression get evaluated in two steps :(i) a = 2; (ii) 2++, compiler throw
+an error for the second step*/
+
 
