@@ -19,8 +19,7 @@ Step 3: printf("%d, %d, %d, %d\n", i, j, k, m); In the previous step the value o
 
 Hence the output is "-2, 3, 1, 1". */
   
-2.
-  
+2.  
 #include<stdio.h>
 
 int main()
