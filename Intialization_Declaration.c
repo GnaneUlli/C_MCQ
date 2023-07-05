@@ -45,6 +45,7 @@ Ans : 8, 16, 10.
 4.
 #include<stdio.h>
 int x = 2;
+
 #if Y == 2 //line 3
 x = 5; //line 4
 #else
