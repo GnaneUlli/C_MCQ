@@ -7,7 +7,6 @@ int main()
     printf("%d, %d, %d, %d\n", i, j, k, m);
     return 0;
 }
-
 Ans : -2, 3, 1, 1
 /*Step 1: int i=-3, j=2, k=0, m; here variable i, j, k, m are declared as an integer type and variable i, j, k are initialized to -3, 2, 0 respectively.
 
