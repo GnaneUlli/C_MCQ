@@ -1,7 +1,5 @@
 1.
-  
-What is the output of the following program?
-  
+What is the output of the following program?  
 #include<stdio.h>
 int *fun()
 {
