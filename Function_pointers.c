@@ -15,7 +15,6 @@ return 0;
 }
 
 Ans : Unexpected behaviour
-
 /*When the execution of fun() gets completed, the addresses assigned to
 the fun() also get destroyed and the space allocated to fun() in the
 stack area is available for the next function call.
