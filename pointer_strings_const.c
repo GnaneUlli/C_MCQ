@@ -63,4 +63,57 @@ printf("%s", ptr);
 }
 
 Ans : odia
+  
+6.
+#include<stdio.h>
+int fun()
+{
+static int const i = 10;
+int j = i+1;
+return j;
+}
+int main()
+{
+int i , j = 0 ;
+for(i = 1 ; i <= 5 ; i++)
+j += fun();
+printf("%d", j);
+return 0;
+}
 
+Ans : 55
+
+7.
+#include<stdio.h>
+int main()
+{
+int i = 10 , j = 20;
+int *const p = &i; //line1
+*p = 20; //line2
+printf("%d %d",i,*p);
+return 0;
+}
+
+Ans : 20,20
+  
+/*In the given program, the const keyword is used after the ‘*’
+operator and before ‘p’, so, ‘p’ is constant, we cannot change ‘p’ but we
+can change the value of the variable pointed by ‘p’. Hence, the program
+will not throw any error and 20 20 get printed by printf() function*/
+
+8.
+#include<stdio.h>
+int main()
+{
+const int i = 10;
+int *p = &i;
+*p = 20;
+printf("%d %d",i,*p);
+return 0;
+}
+Ans : 20
+/*The given program will throw an error in C++, not in C
+because C++ is more type restrictive than C. We have assigned the address
+of a constant variable to a non-constant pointer, this concept is called
+down qualification. We are updating ‘i’ with the help of its address, this
+concept is also called "variable hacking"*/
