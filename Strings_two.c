@@ -160,5 +160,24 @@ statement char p = x; This question is one of the versions of the littleendian 
 gets stored in memory in little-endian mode*/
 
 9.
+#include<stdio.h>
+void fun(char a[])
+{
+int i;
+for (i = 0; i < sizeof(a)/sizeof(a[0]); i++)
+a[i] = (char)i;
+}
+int main()
+{
+int i;
+char a[] = "India";
+fun(a);
+printf("%s",a+1);
+return 0;
+}
+
+Ans : Prints nothing
+//Because the fun() will start from 0 which is '\0' end of the str.
+
 
 
