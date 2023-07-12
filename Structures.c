@@ -110,5 +110,8 @@ return 0;
 }
 
 Ans  :  agpur Kanpur Kanpur 1
+
+6.
+Most important questions will be found in tanuj kumar group 7 - 31 to 60 all 30 bits are important about structures 
   
 
