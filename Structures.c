@@ -12,7 +12,6 @@ printf("%d ",s1->roll);
 printf("%s",s1->name);
 return 0;
 }
-
 Ans : error compile time
 //Intialization of variables is not allowed inside struct.
 
