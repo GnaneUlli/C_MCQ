@@ -71,6 +71,7 @@ return 0;
 }
 
 Ans :  65, A
+  
 /*Explanation: The void pointer is a generic pointer type. It can hold
 addresses of all data types. It is used when the actual data type of a pointer
 is not known for the time, and later it may be known. In the given code we
@@ -106,9 +107,7 @@ int * q = (int*)malloc(sizeof(int));
 printf("%d, %d\n", *p, *q);
 return 0;
 }
-
 Ans:  15, 15
-  
 /*Explanation: The memory for malloc is allocated dynamically in heap
 area using ‘brk’ (keyword) system call. As we can see in figure (i) brk is
 pointing to the free (unallocated) pool of memory. When we call the
