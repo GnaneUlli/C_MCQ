@@ -19,7 +19,6 @@ enum block{one = 2, two , three = 2};
 printf("%d %d ",one , two);
 return 0;
 }
-
 Ans : 2,3
 //Always remember that local scope has highest priority than global scope.
 
@@ -49,13 +48,11 @@ return 0;
 }
 
 Ans : Error compile time.
-
 //once enum gets intialized we canot  change values but in line 3 we are changing values so it throws error.
 
 5.
 We cannot pass an enum to the function as its argument, we
 can only pass its element.
-
 Ans : true
 
 6.
