@@ -117,3 +117,39 @@ because C++ is more type restrictive than C. We have assigned the address
 of a constant variable to a non-constant pointer, this concept is called
 down qualification. We are updating ‘i’ with the help of its address, this
 concept is also called "variable hacking"*/
+
+9.
+#include<stdio.h>
+int main()
+{
+const int x=5;
+const int *ptrx;
+ptrx = &x;
+*ptrx = 10;
+printf("%d\n", x);
+return 0;
+}
+
+Ans : Error compile time
+//ptrx is not changable
+
+10.
+#include <stdio.h>
+int *f1()
+{
+int x = 10;
+return &x;
+}
+int *f2()
+{
+int *ptr;
+*ptr = 10;
+return ptr;
+}
+int *f3()
+{
+int *ptr;
+ptr = (int*) malloc(sizeof (*ptr));
+return ptr;
+}
+Ans :  f3 only
