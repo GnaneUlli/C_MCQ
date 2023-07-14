@@ -153,3 +153,26 @@ ptr = (int*) malloc(sizeof (*ptr));
 return ptr;
 }
 Ans :  f3 only
+
+11.
+#include<stdio.h>
+int main()
+{
+char *str1="abcd";
+char str2[]="abcd";
+printf("%d %d %d",sizeof(str1),
+sizeof(str2),sizeof("abcd"));
+return 0;
+}
+Ans : 4,5,5
+  
+12. What is the output of the following program?
+#include<stdio.h>
+int main()
+{
+char *p;
+printf("%d %d", sizeof(*p), sizeof(p));
+return 0;
+}
+
+Ans : 1,4
