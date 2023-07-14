@@ -99,3 +99,14 @@ return 0;
 
 Ans : 8
 //Normal problem.
+
+7.
+(i) int a[10][10];
+(ii) int *b[10];
+Which of the following assignment operation is/are invalid?
+(a) a[5][6] = 10;
+(b) a[5] = 1000;
+(c) b[5][6] = 10;
+(d) b[5] = 1000;
+
+Ans  : b
