@@ -27,7 +27,6 @@ int main()
     return 0;
 }
 Ans : 12, 6, 12
-  
 /*The macro MAN(x, y) ((x)>(y)) ? (x):(y); returns the biggest number of given two numbers.
 
 Step 1: int i=10, j=5, k=0; The variable i, j, k are declared as an integer type and initialized to value 10, 5, 0 respectively.
