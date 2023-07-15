@@ -48,7 +48,6 @@ Hence the output of the program is 12, 6, 12 */
   
 #include<stdio.h>
 #define SQUARE(x) x*x
-
 int main()
 {
     float s=10, u=30, t=2, a;
