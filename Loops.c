@@ -158,3 +158,32 @@ return 0;
 Ans : error compile time 
 //you can access goto with in same function.
 
+9.
+#include<stdio.h>
+#define num(a) a
+int main()
+{
+int a=1;
+switch(a)
+{
+case num(2):
+printf("yes ");
+case num(1):
+printf("no ");
+break;
+}
+switch(a)
+{
+case 1:
+printf("%d ", a);
+case 2:
+printf("%d ", a);
+case 3:
+printf("%d ", a);
+default:
+printf("%d", a);
+}
+return 0;
+}
+Ans : no 1 1 1 1
+//just a simple switch case statement
