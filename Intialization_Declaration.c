@@ -110,3 +110,15 @@ Which of the following assignment operation is/are invalid?
 (d) b[5] = 1000;
 
 Ans  : b
+
+8.
+#include<stdio.h>
+int main()
+{
+int x=5;
+printf("%d %d %d\n",x,x = x<<2,x = x>>2);
+return 0;
+}
+
+Ans : compiler dependent
+//Once check the assignment rule of variable for correct answer.
