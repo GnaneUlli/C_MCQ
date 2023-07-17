@@ -122,3 +122,30 @@ return 0;
 
 Ans : compiler dependent
 //Once check the assignment rule of variable for correct answer.
+
+9.
+The main difference between the while(1); declaration and while(1){} you find out.
+
+10.
+#include<stdio.h>
+int fun1();
+int fun2();
+int main()
+{
+int p = fun1() + fun2();
+printf("%d",p);
+return 0;
+}
+#include <stdio.h>
+int fun1()
+{
+return printf("hello");
+}
+int fun2() {
+return printf("world");
+}
+
+Ans : helloworld10.
+//When you return the function you are returning with printf() value , if you print printf inside a printf it gives the elemnts size.
+
+11.
