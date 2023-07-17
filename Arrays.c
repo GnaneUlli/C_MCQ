@@ -1,5 +1,4 @@
 1.
-    
 #include<stdio.h>
 int main()
 {
@@ -11,12 +10,10 @@ int main()
     printf("%d, %d, %d", i, j, m);
     return 0;
 }
-
 Ans : 3,2,15
 //you do it
 
 2.
-    
 #include<stdio.h>
 int main()
 {
@@ -42,7 +39,6 @@ Ans :
   
 3.
 #include<stdio.h>
-
 int main()
 {
     static int arr[] = {0, 1, 2, 3, 4};
@@ -66,7 +62,6 @@ Ans : 1, 1, 1
   
 4.
 #include<stdio.h>
-
 int main()
 {
     int a[3][4] = {1, 2, 3, 4, 4, 3, 2, 1, 7, 8, 9, 0};
@@ -76,22 +71,15 @@ int main()
 
 Ans : 65480, 65496
 /*Step 1: int a[3][4] = {1, 2, 3, 4, 4, 3, 2, 1, 7, 8, 9, 0}; The array a[3][4] is declared as an integer array having the 3 rows and 4 colums dimensions.
-
 Step 2: printf("%u, %u\n", a+1, &a+1);
-
 The base address(also the address of the first element) of array is 65472.
-
 For a two-dimensional array like a reference to array has type "pointer to array of 4 ints". Therefore, a+1 is pointing to the memory location of first element of the second row in array a. Hence 65472 + (4 ints * 2 bytes) = 65480
-
 Then, &a has type "pointer to array of 3 arrays of 4 ints", totally 12 ints. Therefore, &a+1 denotes "12 ints * 2 bytes * 1 = 24 bytes".
-
 Hence, begining address 65472 + 24 = 65496. So, &a+1 = 65496
-
 Hence the output of the program is 65480, 65496*/
   
 5.
 #include<stdio.h>
-
 int main()
 {
     int arr[]={2, 3, 4, 1, 6};
@@ -113,7 +101,6 @@ Ans :  1 1 1
 
 7.
 #include<stdio.h>
-
 int main()
 {
     int size, i;
@@ -126,9 +113,8 @@ int main()
     }
     return 0;
 }
-
 Ans : The code is erroneous since the statement declaring array is invalid.
-
+    
 8.
 #include<stdio.h>
 int main()
@@ -199,3 +185,16 @@ return 0;
 
 //both 10 and 11 figure it out.
 
+12.
+#include <stdio.h>
+int main(void)
+{
+int a[] = {1, 2} , b[] = {3 , 4} , c[] = { 5 , 6};
+int *p = a , *q = b , *r = c;
+++*p; *q++ ; *++r;
+printf("%d %d %d ", a[0], a[1], *p);
+printf("%d %d %d ", b[0], b[1], *q);
+printf("%d %d %d", c[0], c[1], *r);
+return 0;
+}
+Ans : 2,2,2,3,4,4,5,6,6.
