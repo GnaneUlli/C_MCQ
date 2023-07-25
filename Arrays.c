@@ -14,6 +14,7 @@ Ans : 3,2,15
 //you do it
 
 2.
+    
 #include<stdio.h>
 int main()
 {
